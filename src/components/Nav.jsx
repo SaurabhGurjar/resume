@@ -1,14 +1,15 @@
-import Button from "./shared/Button/Button";
 import { useState } from "react";
+
+import Button from "./shared/Button/Button";
 import PersonIcon from "./shared/SVGs/Person";
 import EducationIcon from "./shared/SVGs/Edu";
 import WorkIcon from "./shared/SVGs/Work";
 import SummaryIcon from "./shared/SVGs/Summary";
 import HobbyIcon from "./shared/SVGs/Hobby";
 import Logo from "./shared/SVGs/Logo";
+import SkillIcon from "./shared/SVGs/Skills";
 
 import "../styles/nav.css";
-import SkillIcon from "./shared/SVGs/Skills";
 
 export default function Nav() {
   const [buttonId, setButtonId] = useState(0);
