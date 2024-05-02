@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Button from "./shared/Button/Button";
+import Button from "./shared/Button";
 import PersonIcon from "./shared/SVGs/Person";
 import EducationIcon from "./shared/SVGs/Edu";
 import WorkIcon from "./shared/SVGs/Work";
@@ -28,7 +28,7 @@ export default function Nav() {
   };
 
   return (
-    <div className="nav-container">
+    <div className="nav">
       <div className="logo-container">
         <Logo color="#000" />
         <h2>CV</h2>
