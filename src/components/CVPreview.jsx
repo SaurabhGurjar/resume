@@ -1,4 +1,4 @@
-import "../styles/cvc.css";
+import "../styles/cv-preview.css";
 import Education from "./cv-preview/Education";
 import Work from "./cv-preview/Experience";
 import Personal from "./cv-preview/Personal";
