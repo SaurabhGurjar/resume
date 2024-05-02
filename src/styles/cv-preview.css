@@ -1,0 +1,147 @@
+.cv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 3rem;
+}
+
+.cv-preview-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 0.5em;
+  h1,
+  h2,
+  h3,
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.section-heading-seperator {
+  width: 100%;
+  height: 1px;
+  background-color: #cacece;
+}
+
+#personal-section {
+  .list {
+    display: flex;
+    gap: 2em;
+  }
+}
+
+.section-heading {
+  font-size: 32px;
+  margin-bottom: 0.2em;
+}
+
+#skills-section {
+  .skill-type-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 1em;
+  }
+  .list {
+    display: flex;
+    gap: 2em;
+
+    li:first-child {
+      list-style-type: none;
+    }
+  }
+}
+
+#work-section {
+  .company-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 2em;
+  }
+
+  .cv-preview-p {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+}
+
+.company-name-ad,
+.school-name-ad {
+  color: #b7b9b9;
+}
+
+.company-name-ad,
+.position-work-period,
+.school-name-ad,
+.course-name-period {
+  display: flex;
+  flex: 1 1 auto;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#education-section {
+  .school-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  h2 {
+    font-size: 16px;
+  }
+}
+
+#courses-section {
+  h2 {
+    font-size: 16px;
+  }
+  .certificate-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.3em;
+
+    .course-seperator {
+      width: 1.5em;
+      height: 3px;
+      background-color: #000;
+    }
+  }
+}
+
+#hobby-section {
+  h2 {
+    font-size: 16px;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  .hobbies-container {
+    display: grid;
+    gap: 4em;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+}
