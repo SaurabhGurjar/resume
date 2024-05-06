@@ -1,3 +1,20 @@
+export const data = {
+  personalInfo: {
+    firstName: "jonathan",
+    lastName: "wright",
+    role: "lead business analyst",
+    email: "name@gmail.com",
+    phoneNumber: "+1-921-389-0182",
+    address: "dallas, tx",
+    socialLinks: [
+      {
+        name: "linkedIn",
+        link: "linkedin.com/in/jonwrightjr",
+      },
+    ],
+  },
+};
+
 export const personalInfo = {
   name: "Jonathan wright",
   job: "Lead business Analyst",
@@ -9,7 +26,7 @@ export const personalInfo = {
   ],
 };
 
-export const summary = `Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+export const summary = `lorem ipsum dolor sit amet consectetur, adipisicing elit. 
 Perspiciatis cum officia porro consequuntur consequatur? Vero ipsa exercitationem 
 ab veniam commodi explicabo nam, quos animi, illo laborum ex nisi voluptatibus odio!`;
 
