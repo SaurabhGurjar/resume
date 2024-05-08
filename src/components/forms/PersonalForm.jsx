@@ -3,14 +3,13 @@ import SocialLinkInput from "./SocialLinkInput";
 
 const handleChange = (name, value, state) => {
   const [data, setData] = state;
-  console.log(data);
   const newData = { ...data };
-  newData[name] = value;
+  newData.personalInfo[name] = value;
   setData(newData);
 };
 
 const SocialField = ({ state }) => {
-  const data = state[0];
+  const data = state[0].personalInfo;
   const [linkedIn, gitHub, portfolio] = data.socialLinks;
   return (
     <div className="social-links">
@@ -22,12 +21,11 @@ const SocialField = ({ state }) => {
   );
 };
 
-export default function Personal({ state }) {
-  const [data, setData] = state;
+export default function PersonalForm ({ state }) {
+  const data = state[0].personalInfo;
 
   return (
     <>
-      <div className="form-title">Personal Information</div>
       <InputFeild
         id="first-name"
         type="text"

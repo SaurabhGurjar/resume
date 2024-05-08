@@ -7,18 +7,19 @@ import Nav from "./components/Nav";
 import { data as appData } from "./app-data/data";
 
 function App() {
-  const personalInfo = useState(appData.personalInfo);
+  const data = useState(appData);
+  const navState = useState("0");
   return (
     <>
       <div className="nav-container">
-        <Nav />
+        <Nav state={navState} />
       </div>
       <div className="seperator"></div>
       <div className="form-container">
-        <Form state={personalInfo} />
+        <Form dataState={data} navState={navState}/>
       </div>
       <div className="cv-container">
-        <CV state={personalInfo} />
+        <CV state={data} />
       </div>
     </>
   );

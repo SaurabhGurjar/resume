@@ -1,3 +1,4 @@
+import { sentenceCase } from "../../utils/string-util";
 import Para from "../shared/Paragraph";
 import Section from "../shared/Section";
 import Heading from "../shared/SectionHeading";
@@ -8,10 +9,11 @@ const content = (summary) => {
     <>
       <Heading text="Summary" />
       <Seperator cls="section-heading-seperator" />
-      <Para text={summary} />
+      <Para text={sentenceCase(summary)} />
     </>
   );
 };
-export default function Summary({ summary }) {
-  return <Section id="Summary" content={content(summary)} />;
+export default function Summary({ state }) {
+  const summary = state[0].summary;
+  return <Section id="summary" content={content(summary)} />;
 }

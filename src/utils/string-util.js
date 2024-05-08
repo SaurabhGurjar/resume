@@ -22,3 +22,14 @@ export function sentenceCase(str) {
     str.split("").slice(1).join("")
   );
 }
+
+export function removeSpace(str) {
+  const newStr = [];
+
+  str.split(",").forEach((item) => {
+    if (item.length > 0 && item) {
+      newStr.push(item);
+    }
+  });
+  return newStr.join(",");
+}

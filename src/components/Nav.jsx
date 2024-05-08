@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import Button from "./shared/Button";
 import PersonIcon from "./shared/SVGs/Person";
 import EducationIcon from "./shared/SVGs/Edu";
@@ -21,8 +19,8 @@ const buttonsName = {
   5: "Hobby",
 };
 
-export default function Nav() {
-  const [buttonId, setButtonId] = useState("0");
+export default function Nav({ state }) {
+  const [buttonId, setButtonId] = state;
   const handleClick = (id) => {
     setButtonId(id);
   };

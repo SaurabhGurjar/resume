@@ -1,3 +1,31 @@
+import { v4 as uuidv4 } from "uuid";
+
+export class Skills {
+  constructor(type, skills) {
+    this.id = uuidv4();
+    this.type = type;
+    this.skills = skills;
+  }
+}
+
+const businessSkills = new Skills("Business", [
+  "Budgeting",
+  "Financial Analysis",
+  "Project Management",
+  "Stakeholder Management",
+  "Business Strategy",
+]);
+
+const technicalSkills = new Skills("Technology", [
+  "Excel",
+  "VBA",
+  "SQL",
+  "QuickBooks",
+  "Power BI",
+  "Tableau",
+  "Python",
+]);
+
 export const data = {
   personalInfo: {
     firstName: "jonathan",
@@ -13,50 +41,11 @@ export const data = {
       },
     ],
   },
+  summary: `lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+    Perspiciatis cum officia porro consequuntur consequatur? Vero ipsa exercitationem 
+    ab veniam commodi explicabo nam, quos animi, illo laborum ex nisi voluptatibus odio!`,
+  allSkills: [businessSkills, technicalSkills],
 };
-
-export const personalInfo = {
-  name: "Jonathan wright",
-  job: "Lead business Analyst",
-  contact: [
-    "+1-921-389-0182",
-    "name@gmail.com",
-    "linkedin.com/in/jonwrightjr",
-    "Dallas, TX",
-  ],
-};
-
-export const summary = `lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-Perspiciatis cum officia porro consequuntur consequatur? Vero ipsa exercitationem 
-ab veniam commodi explicabo nam, quos animi, illo laborum ex nisi voluptatibus odio!`;
-
-export const skills = [
-  {
-    id: "biz-s",
-    type: "Business",
-    skills: [
-      "Budgeting",
-      "Financial Analysis",
-      "Project Management",
-      "Stakeholder Management",
-      "Business Strategy",
-    ],
-  },
-
-  {
-    id: "tec-s",
-    type: "Technology",
-    skills: [
-      "Excel",
-      "VBA",
-      "SQL",
-      "QuickBooks",
-      "Power BI",
-      "Tableau",
-      "Python",
-    ],
-  },
-];
 
 export const work = [
   {

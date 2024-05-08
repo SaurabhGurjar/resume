@@ -15,7 +15,7 @@ export default function SocialLinkInput({ id, inputName, state }) {
     const [data, setData] = state;
     const newData = { ...data };
     const newSocialArr = [];
-    data.socialLinks.forEach((item) => {
+    data.personalInfo.socialLinks.forEach((item) => {
       if (item.name === name) {
         const newLink = { ...item };
         newLink.link = value;
@@ -24,7 +24,7 @@ export default function SocialLinkInput({ id, inputName, state }) {
         newSocialArr.push(item);
       }
     });
-    newData.socialLinks = newSocialArr;
+    newData.personalInfo.socialLinks = newSocialArr;
     setData(newData);
   };
 
@@ -32,22 +32,22 @@ export default function SocialLinkInput({ id, inputName, state }) {
     const [data, setData] = state;
     const newData = { ...data };
     const newSocialArr = [];
-    data.socialLinks.forEach((item) => {
+    data.personalInfo.socialLinks.forEach((item) => {
       if (item.name !== id) {
         newSocialArr.push(item);
       }
     });
-    newData.socialLinks = newSocialArr;
+    newData.personalInfo.socialLinks = newSocialArr;
     setData(newData);
   };
 
   const addLink = (linkName, linkVal, state) => {
     const [data, setData] = state;
 
-    if (data.socialLinks.length < MAX_ALLOWED_SOCIAL_LINK) {
+    if (data.personalInfo.socialLinks.length < MAX_ALLOWED_SOCIAL_LINK) {
       const newData = { ...data };
       const newSocialArr = [];
-      data.socialLinks.forEach((item) => {
+      data.personalInfo.socialLinks.forEach((item) => {
         if (item.name === linkName) {
           return;
         } else {
@@ -56,7 +56,7 @@ export default function SocialLinkInput({ id, inputName, state }) {
       });
 
       newSocialArr.push({ name: linkName, link: linkVal });
-      newData.socialLinks = newSocialArr;
+      newData.personalInfo.socialLinks = newSocialArr;
       setData(newData);
     }
   };
@@ -78,7 +78,7 @@ export default function SocialLinkInput({ id, inputName, state }) {
           className="remove-feild"
           onClick={(e) => {
             if (e.nativeEvent.pointerId < 0) return;
-            const linkVal = e.target.form[id + "-" + "input"].value;
+            // const linkVal = e.target.form[id + "-" + "input"].value;
             if (linkFeildHasAValue(e, id)) {
               removeLink(id, state);
 

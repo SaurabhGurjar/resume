@@ -7,8 +7,6 @@ import Summary from "./cv-preview/Summary";
 import Courses from "./cv-preview/Courses";
 import Hobby from "./cv-preview/Hobby";
 import {
-  summary,
-  skills,
   work,
   educationData,
   certificatesData,
@@ -17,21 +15,23 @@ import {
 
 export default function CV({ state }) {
   const data = state[0];
-  const linksAndContact = [data.phoneNumber, data.email];
+  const personalInfo = data.personalInfo;
+  console.log(data);
+  const linksAndContact = [personalInfo.phoneNumber, personalInfo.email];
 
   // Append social links to linksAndContact;
-  data.socialLinks.map((item) => linksAndContact.push(item.link));
-  const linkContactAndAddress = linksAndContact.concat([data.address]);
+  personalInfo.socialLinks.map((item) => linksAndContact.push(item.link));
+  const linkContactAndAddress = linksAndContact.concat([personalInfo.address]);
   return (
     <div className="cv">
       <Personal
-        name={data.firstName + " " + data.lastName}
-        role={data.role}
-        email={data.email}
+        name={personalInfo.firstName + " " + personalInfo.lastName}
+        role={personalInfo.role}
+        email={personalInfo.email}
         contact={linkContactAndAddress}
       />
-      <Summary summary={summary} />
-      <Skills skills={skills} />
+      <Summary state={state} />
+      <Skills state={state} />
       <Work work={work} />
       <Education data={educationData} />
       <Courses data={certificatesData} />
