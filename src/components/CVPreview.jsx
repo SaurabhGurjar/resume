@@ -8,9 +8,7 @@ import Courses from "./cv-preview/Courses";
 import Hobby from "./cv-preview/Hobby";
 import {
   work,
-  educationData,
   certificatesData,
-  hobbyData,
 } from "../app-data/data";
 
 export default function CV({ state }) {
@@ -30,12 +28,12 @@ export default function CV({ state }) {
         email={personalInfo.email}
         contact={linkContactAndAddress}
       />
-      <Summary state={state} />
-      <Skills state={state} />
+      <Summary data={data.summary} />
+      <Skills data={data.allSkills} />
       <Work work={work} />
-      <Education data={educationData} />
+      <Education data={data.education} />
       <Courses data={certificatesData} />
-      <Hobby data={hobbyData} />
+      <Hobby data={data.hobbies} />
     </div>
   );
 }
