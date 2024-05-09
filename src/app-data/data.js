@@ -8,6 +8,34 @@ export class Skills {
   }
 }
 
+export class Education {
+  constructor(institute, address, course, started, ended) {
+    this.id = uuidv4();
+    this.institute = institute;
+    this.address = address;
+    this.course = course;
+    this.started = started;
+    this.ended = ended;
+  }
+}
+
+export class Certificate {
+  constructor(course, institute, completedIn) {
+    this.id = uuidv4();
+    this.course = course;
+    this.institute = institute;
+    this.completedIn = completedIn;
+  }
+}
+
+export class Hobby {
+  constructor(title, description) {
+    this.id = uuidv4();
+    this.title = title;
+    this.description = description;
+  }
+}
+
 const businessSkills = new Skills("Business", [
   "Budgeting",
   "Financial Analysis",
@@ -25,6 +53,55 @@ const technicalSkills = new Skills("Technology", [
   "Tableau",
   "Python",
 ]);
+
+const edu1 = new Education(
+  "University of Wisconsin",
+  "Wisconsin",
+  "M.Sc. in Finance",
+  "2012",
+  "2013"
+);
+
+const edu2 = new Education(
+  "BBA: Business, Supply Chain Management",
+  "Wisconsin",
+  "M.Sc. in Finance",
+  "2008",
+  "2012"
+);
+
+const hobby1 = new Hobby(
+  "Giving back to my community",
+  "With my two kids, I spend at least on day each month volunteering."
+);
+
+const hobby2 = new Hobby(
+  "Horse-riding & spending time in nature",
+  "Recharging during the weekend is vital for leading a high-performing team."
+);
+
+const hobby3 = new Hobby(
+  "Developing my team into star analysts",
+  "Not only is it very satisfying, but it is also the hightest value-add of any leader."
+);
+
+const certif1 = new Certificate(
+  "PMI Professional in Business Analysis (PBA)",
+  "PMI",
+  "2019"
+);
+
+const certif2 = new Certificate(
+  "Certified Associate in Project Management (CAPM)",
+  "PMI",
+  "2018"
+);
+
+const certif3 = new Certificate(
+  "High-Dimensional Data Analysis",
+  "Havard",
+  "2017"
+);
 
 export const data = {
   personalInfo: {
@@ -45,8 +122,63 @@ export const data = {
     Perspiciatis cum officia porro consequuntur consequatur? Vero ipsa exercitationem 
     ab veniam commodi explicabo nam, quos animi, illo laborum ex nisi voluptatibus odio!`,
   allSkills: [businessSkills, technicalSkills],
+  education: [edu1, edu2],
+  certificates: [certif1, certif2, certif3],
+  hobbies: [hobby1, hobby2, hobby3],
 };
 
+export const certificatesData = [
+  {
+    course: "PMI Professional in Business Analysis (PBA)",
+    institute: "PMI",
+    completedIn: "2019",
+  },
+  {
+    course: "Certified Associate in Project Management (CAPM)",
+    institute: "PMI",
+    completedIn: "2018",
+  },
+  {
+    course: "High-Dimensional Data Analysis",
+    institute: "Havard",
+    completedIn: "2017",
+  },
+];
+
+export const educationData = [
+  {
+    school: "University of Wisconsin",
+    course: "M.Sc. in Finance",
+    address: "Wisconsin",
+    started: "2012",
+    ended: "2013",
+  },
+  {
+    school: "University of Wisconsin",
+    course: "BBA: Business, Supply Chain Management",
+    address: "Wisconsin",
+    started: "2008",
+    ended: "2012",
+  },
+];
+
+export const hobbyData = [
+  {
+    title: "Giving back to my community",
+    description:
+      "With my two kids, I spend at least on day each month volunteering.",
+  },
+  {
+    title: "Horse-riding & spending time in nature",
+    description:
+      "Recharging during the weekend is vital for leading a high-performing team.",
+  },
+  {
+    title: "Developing my team into star analysts",
+    description:
+      "Not only is it very satisfying, but it is also the hightest value-add of any leader.",
+  },
+];
 export const work = [
   {
     company: "Network Solutions LLC",
@@ -97,55 +229,4 @@ export const work = [
   },
 ];
 
-export const educationData = [
-  {
-    school: "University of Wisconsin",
-    course: "M.Sc. in Finance",
-    address: "Wisconsin",
-    started: "2012",
-    ended: "2013",
-  },
-  {
-    school: "University of Wisconsin",
-    course: "BBA: Business, Supply Chain Management",
-    address: "Wisconsin",
-    started: "2008",
-    ended: "2012",
-  },
-];
 
-export const certificatesData = [
-  {
-    course: "PMI Professional in Business Analysis (PBA)",
-    institute: "PMI",
-    completedIn: "2019",
-  },
-  {
-    course: "Certified Associate in Project Management (CAPM)",
-    institute: "PMI",
-    completedIn: "2018",
-  },
-  {
-    course: "High-Dimensional Data Analysis",
-    institute: "Havard",
-    completedIn: "2017",
-  },
-];
-
-export const hobbyData = [
-  {
-    title: "Giving back to my community",
-    description:
-      "With my two kids, I spend at least on day each month volunteering.",
-  },
-  {
-    title: "Horse-riding & spending time in nature",
-    description:
-      "Recharging during the weekend is vital for leading a high-performing team.",
-  },
-  {
-    title: "Developing my team into star analysts",
-    description:
-      "Not only is it very satisfying, but it is also the hightest value-add of any leader.",
-  },
-];
