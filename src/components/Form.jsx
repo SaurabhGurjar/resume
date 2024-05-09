@@ -36,6 +36,9 @@ export default function Form({ navState, dataState }) {
       formTitle = "Education";
       break;
     case "5":
+      formTitle = "Certificates";
+      break;
+    case "6":
       formTitle = "Interests & Hobby";
       break;
     default:
@@ -51,7 +54,7 @@ export default function Form({ navState, dataState }) {
         {nav === "2" && <SkillsForm state={dataState} />}
         {nav === "3" && <ExperienceForm state={dataState} />}
         {nav === "4" && <EducationForm state={dataState} />}
-        {nav === "5" && <HobbyForm state={dataState} />}
+        {nav === "6" && <HobbyForm state={dataState} />}
       </form>
       <div className="next-prev-button-container">
         {nav === "0" ? (
@@ -63,7 +66,7 @@ export default function Form({ navState, dataState }) {
             Back
           </button>
         )}
-        {nav === "5" ? (
+        {nav === "6" ? (
           <button id="next" disabled>
             Next
           </button>

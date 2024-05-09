@@ -6,6 +6,7 @@ import SummaryIcon from "./shared/SVGs/Summary";
 import HobbyIcon from "./shared/SVGs/Hobby";
 import Logo from "./shared/SVGs/Logo";
 import SkillIcon from "./shared/SVGs/Skills";
+import CertificateIcon from "./shared/SVGs/Certificate";
 
 import "../styles/nav.css";
 import Tag from "./shared/Tag";
@@ -16,7 +17,8 @@ const buttonsName = {
   2: "Skills",
   3: "Work Experience",
   4: "Education",
-  5: "Hobby",
+  5: "Certificates",
+  6: "Hobby",
 };
 
 export default function Nav({ state }) {
@@ -70,8 +72,15 @@ export default function Nav({ state }) {
         <Button
           id="5"
           cls={`${"nav-button"} ${buttonId === "5" ? "selected" : ""}`}
-          icon={<HobbyIcon color={buttonId === "5" ? "#fff" : "#000"} />}
+          icon={<CertificateIcon color={buttonId === "5" ? "#fff" : "#000"} />}
           tag={buttonId === "5" && <Tag text={buttonsName[5]} />}
+          onClick={handleClick}
+        />
+        <Button
+          id="6"
+          cls={`${"nav-button"} ${buttonId === "6" ? "selected" : ""}`}
+          icon={<HobbyIcon color={buttonId === "6" ? "#fff" : "#000"} />}
+          tag={buttonId === "6" && <Tag text={buttonsName[5]} />}
           onClick={handleClick}
         />
       </div>
