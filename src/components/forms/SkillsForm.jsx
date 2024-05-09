@@ -76,15 +76,14 @@ const AddSkill = ({ state }) => {
 
 const deleteSkill = (id, state) => {
   const [data, setData] = state;
-  const skills = [];
-  data.allSkills.forEach((item) => {
+  const remainingSkills = [];
+  const newData = { ...data };
+  newData.allSkills.forEach((item) => {
     if (item.id !== id) {
-      skills.push(item);
+      remainingSkills.push(item);
     }
   });
-  console.log(skills, id);
-  const newData = { ...data };
-  newData.allSkills = skills;
+  newData.allSkills = remainingSkills;
   setData(newData);
 };
 
@@ -95,7 +94,7 @@ const SkillComp = ({ id, inputName, value, skills, state }) => {
       <input
         id={id}
         name={inputName}
-        value={value}
+        defaultValue={value}
         placeholder="Skill type"
         onChange={(e) => handleTypeChange(id, e.target.value, state)}
       />
@@ -107,8 +106,8 @@ const SkillComp = ({ id, inputName, value, skills, state }) => {
         placeholder="List of skill saperated by a coma e.g- Writting, Marketing"
         onChange={(e) => handleSkillChange(id, e.target.value, state)}
       ></textarea>
-      <button id="skill-delete-btn" onClick={() => deleteSkill(id, state)}>
-        Delete skill
+      <button id="delete-btn" onClick={() => deleteSkill(id, state)}>
+        Delete
       </button>
     </div>
   );
