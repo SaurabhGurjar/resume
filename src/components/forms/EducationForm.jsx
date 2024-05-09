@@ -108,6 +108,7 @@ const AddEducation = ({ state }) => {
   };
   return (
     <div className="form-field-wrapper">
+      <p>Add more education</p>
       <label htmlFor="institute">Institute name</label>
       <input
         id="institute"

@@ -65,6 +65,7 @@ const AddHobby = ({ state }) => {
   };
   return (
     <div className="form-field-wrapper">
+      <p>Add more Insterests & Hobbies</p>
       <label htmlFor="title">Title</label>
       <input type="text" id="title" name="addTitle" placeholder="Title" />
       <label htmlFor="description">Description</label>
