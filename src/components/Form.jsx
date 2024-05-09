@@ -4,6 +4,7 @@ import SummaryForm from "./forms/SummaryForm";
 import SkillsForm from "./forms/SkillsForm";
 import EducationForm from "./forms/EducationForm";
 import HobbyForm from "./forms/HobbyForm";
+import ExperienceForm from "./forms/ExperienceForm";
 
 const handleNext = (state) => {
   const [buttonId, setButtonId] = state;
@@ -28,6 +29,9 @@ export default function Form({ navState, dataState }) {
     case "2":
       formTitle = "Skills";
       break;
+    case "3":
+      formTitle = "Experience";
+      break;
     case "4":
       formTitle = "Education";
       break;
@@ -45,6 +49,7 @@ export default function Form({ navState, dataState }) {
         {nav === "0" && <PersonalForm state={dataState} />}
         {nav === "1" && <SummaryForm state={dataState} />}
         {nav === "2" && <SkillsForm state={dataState} />}
+        {nav === "3" && <ExperienceForm state={dataState} />}
         {nav === "4" && <EducationForm state={dataState} />}
         {nav === "5" && <HobbyForm state={dataState} />}
       </form>
