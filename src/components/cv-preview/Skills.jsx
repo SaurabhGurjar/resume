@@ -9,7 +9,7 @@ const content = (data) => {
     <>
       <Heading text="Skills" />
       <Seperator cls="section-heading-seperator" />
-      {data.allSkills.map((item) => {
+      {data.map((item) => {
         return (
           <Fragment key={item.id}>
             <div className="skill-type-wrapper">
@@ -22,7 +22,6 @@ const content = (data) => {
     </>
   );
 };
-export default function Skills({ state }) {
-  const data = state[0];
+export default function Skills({ data }) {
   return <Section id="skills-section" content={content(data)} />;
 }

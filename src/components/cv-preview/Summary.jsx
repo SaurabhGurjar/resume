@@ -13,7 +13,6 @@ const content = (summary) => {
     </>
   );
 };
-export default function Summary({ state }) {
-  const summary = state[0].summary;
-  return <Section id="summary" content={content(summary)} />;
+export default function Summary({ data }) {
+  return <Section id="summary" content={content(data)} />;
 }

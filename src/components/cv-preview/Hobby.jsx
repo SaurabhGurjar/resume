@@ -12,7 +12,7 @@ const content = (data) => {
       <div className="hobbies-container">
         {data.map((item) => {
           return (
-            <div key={uuidv4()} className="Hobby-wapper">
+            <div key={item.id} className="Hobby-wapper">
               <h2>{item.title}</h2>
               <p>{item.description}</p>
             </div>

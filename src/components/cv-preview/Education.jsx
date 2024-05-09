@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
-import { Fragment } from "react";
 import Section from "../shared/Section";
 import Heading from "../shared/SectionHeading";
 import Seperator from "../shared/Seperator";
@@ -11,9 +9,9 @@ const content = (data) => {
       <Seperator cls="section-heading-seperator" />
       {data.map((item) => {
         return (
-          <div key={uuidv4()} className="school-wrapper">
+          <div key={item.id} className="school-wrapper">
             <div className="school-name-ad">
-              <h2>{item.school}</h2>
+              <h2>{item.institute}</h2>
               <h2>{item.address}</h2>
             </div>
             <div className="course-name-period">
