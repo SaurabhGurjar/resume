@@ -104,7 +104,7 @@
   }
 }
 
-#courses-section {
+#certificate-section {
   h2 {
     font-size: 16px;
   }
@@ -115,7 +115,7 @@
     align-items: center;
     gap: 0.3em;
 
-    .course-seperator {
+    .certificate-seperator {
       width: 1.5em;
       height: 3px;
       background-color: #000;
