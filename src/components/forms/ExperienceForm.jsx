@@ -62,6 +62,15 @@ const deleteCompany = (id, state) => {
 };
 
 const addNewPostion = (id, form, state, newRoleState) => {
+  if (
+    form[id + "newPosition"].trim() ||
+    form[id + "newWorkdone"].trim() ||
+    form[id + "newStarted"].trim() ||
+    form[id + "newEnded"].trim()
+  ) {
+    return;
+  }
+
   const [data, setData] = state;
   const [showRoleForm, setNewRoleForm] = newRoleState;
   let newShowRoleForm = { ...showPositionForm };
@@ -91,8 +100,6 @@ const showPositionForm = (newRoleState) => {
 };
 
 const addNewCompany = (form, state) => {
-  const [data, setData] = state;
-  const newData = { ...data };
   if (
     !form.newCompany.value.trim() ||
     !form.newDescription.value.trim() ||
@@ -104,6 +111,8 @@ const addNewCompany = (form, state) => {
   ) {
     return;
   }
+  const [data, setData] = state;
+  const newData = { ...data };
   newData.experience.push(
     new Experience(
       form.newCompany.value,

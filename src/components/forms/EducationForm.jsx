@@ -85,7 +85,6 @@ const EducationComp = ({
 const AddEducation = ({ state }) => {
   const [data, setData] = state;
   const handleClick = (form) => {
-    const newData = { ...data };
     if (
       !form.addInstitute.value.trim() ||
       !form.addAddress.value.trim() ||
@@ -95,6 +94,7 @@ const AddEducation = ({ state }) => {
     ) {
       return;
     }
+    const newData = { ...data };
     newData.education.push(
       new Education(
         form.addInstitute.value,

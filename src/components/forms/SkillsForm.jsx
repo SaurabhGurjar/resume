@@ -25,17 +25,12 @@ const handleSkillChange = (id, value, state) => {
 
 const AddSkill = ({ state }) => {
   const handleClick = (form, state) => {
+    if (!form.skills.trim() || !form["skill-type"].trim()) {
+      return;
+    }
     console.log(form["skill-type"]);
     const [data, setData] = state;
     const newData = { ...data };
-    if (
-      form["skill-type"].value === " " ||
-      form.skills.value === " " ||
-      !form.skills.value ||
-      !form["skill-type"].value
-    ) {
-      return;
-    }
     const newSkill = new Skills(
       form["skill-type"].value,
       removeSpace(form.skills.value).split(",")

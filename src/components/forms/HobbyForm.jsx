@@ -54,10 +54,10 @@ const HobbyComp = ({ id, title, description, state }) => {
 const AddHobby = ({ state }) => {
   const [data, setData] = state;
   const handleClick = (form) => {
-    const newData = { ...data };
     if (!form.addTitle.value.trim() || !form.addDescription.value.trim()) {
       return;
     }
+    const newData = { ...data };
     newData.hobbies.push(
       new Hobby(form.addTitle.value, form.addDescription.value)
     );
