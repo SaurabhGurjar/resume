@@ -5,6 +5,7 @@ import Form from "./components/Form";
 import Nav from "./components/Nav";
 
 import { data as appData } from "./app-data/data";
+import DownloadButton from "./components/cv-preview/Download";
 
 function App() {
   const data = useState(appData);
@@ -16,10 +17,11 @@ function App() {
       </div>
       <div className="seperator"></div>
       <div className="form-container">
-        <Form dataState={data} navState={navState}/>
+        <Form dataState={data} navState={navState} />
       </div>
       <div className="cv-container">
         <CV state={data} />
+        <DownloadButton />
       </div>
     </>
   );
