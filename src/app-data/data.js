@@ -39,10 +39,10 @@ export class Education {
 }
 
 export class Certificate {
-  constructor(course, institute, completedIn) {
+  constructor(name, provider, completedIn) {
     this.id = uuidv4();
-    this.course = course;
-    this.institute = institute;
+    this.name = name;
+    this.provider = provider;
     this.completedIn = completedIn;
   }
 }
@@ -131,8 +131,8 @@ const nsllc = new Experience(
   "",
   "Dallas, TX",
   "Lead Business Analyst & Project Manager",
-   nsllclbaWorkdone,
-  "2019",
+  nsllclbaWorkdone,
+  "2019"
 );
 
 const nsllcsbaWorkdone = [
@@ -142,7 +142,7 @@ const nsllcsbaWorkdone = [
 ];
 
 nsllc.role.push(
-  new Role("Senior Business Analyst",nsllcsbaWorkdone, "2017", "2019")
+  new Role("Senior Business Analyst", nsllcsbaWorkdone, "2017", "2019")
 );
 
 const lauzonWorkdone = [
@@ -185,21 +185,3 @@ export const data = {
   certificates: [certif1, certif2, certif3],
   hobbies: [hobby1, hobby2, hobby3],
 };
-
-export const certificatesData = [
-  {
-    course: "PMI Professional in Business Analysis (PBA)",
-    institute: "PMI",
-    completedIn: "2019",
-  },
-  {
-    course: "Certified Associate in Project Management (CAPM)",
-    institute: "PMI",
-    completedIn: "2018",
-  },
-  {
-    course: "High-Dimensional Data Analysis",
-    institute: "Havard",
-    completedIn: "2017",
-  },
-];
