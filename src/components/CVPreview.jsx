@@ -16,7 +16,7 @@ export default function CV({ state }) {
   personalInfo.socialLinks.map((item) => linksAndContact.push(item.link));
   const linkContactAndAddress = linksAndContact.concat([personalInfo.address]);
   return (
-    <div className="cv">
+    <div className="cv" id="cv-preview">
       <Personal
         name={personalInfo.firstName + " " + personalInfo.lastName}
         role={personalInfo.role}
