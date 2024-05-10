@@ -5,6 +5,7 @@ import SkillsForm from "./forms/SkillsForm";
 import EducationForm from "./forms/EducationForm";
 import HobbyForm from "./forms/HobbyForm";
 import ExperienceForm from "./forms/ExperienceForm";
+import CertificateForm from "./forms/CertificatesForm";
 
 const handleNext = (state) => {
   const [buttonId, setButtonId] = state;
@@ -36,7 +37,7 @@ export default function Form({ navState, dataState }) {
       formTitle = "Education";
       break;
     case "5":
-      formTitle = "Certificates";
+      formTitle = "Course & Certificates";
       break;
     case "6":
       formTitle = "Interests & Hobby";
@@ -54,6 +55,7 @@ export default function Form({ navState, dataState }) {
         {nav === "2" && <SkillsForm state={dataState} />}
         {nav === "3" && <ExperienceForm state={dataState} />}
         {nav === "4" && <EducationForm state={dataState} />}
+        {nav === "5" && <CertificateForm state={dataState} />}
         {nav === "6" && <HobbyForm state={dataState} />}
       </form>
       <div className="next-prev-button-container">
