@@ -176,9 +176,15 @@ export const data = {
       },
     ],
   },
-  summary: `lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-    Perspiciatis cum officia porro consequuntur consequatur? Vero ipsa exercitationem 
-    ab veniam commodi explicabo nam, quos animi, illo laborum ex nisi voluptatibus odio!`,
+  summary: `Accomplished and detail-oriented Lead Business 
+  Analyst with over 8 years of experience in driving business 
+  requirements, process improvement, and strategic initiatives. 
+  Proven ability to lead cross-functional teams, analyze complex 
+  business processes, and implement innovative solutions that 
+  optimize operational efficiency. Adept at stakeholder management, 
+  project coordination, and delivering impactful insights to executive 
+  leadership. Strong communication and problem-solving skills with a 
+  track record of successfully delivering high-impact projects.`,
   allSkills: [businessSkills, technicalSkills],
   experience: [nsllc, lauzon],
   education: [edu1, edu2],
