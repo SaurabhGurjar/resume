@@ -5,7 +5,7 @@ import SkillsForm from "./forms/SkillsForm";
 import EducationForm from "./forms/EducationForm";
 import HobbyForm from "./forms/HobbyForm";
 import ExperienceForm from "./forms/ExperienceForm";
-import CertificateForm from "./forms/CertificatesForm";
+import CertificateForm from "./forms/CertificateForm";
 
 const handleNext = (state) => {
   const [buttonId, setButtonId] = state;
