@@ -80,7 +80,7 @@ export default function Nav({ state }) {
           id="6"
           cls={`${"nav-button"} ${buttonId === "6" ? "selected" : ""}`}
           icon={<HobbyIcon color={buttonId === "6" ? "#fff" : "#000"} />}
-          tag={buttonId === "6" && <Tag text={buttonsName[5]} />}
+          tag={buttonId === "6" && <Tag text={buttonsName[6]} />}
           onClick={handleClick}
         />
       </div>
