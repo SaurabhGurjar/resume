@@ -16,28 +16,38 @@ const deleteCertificate = (id, state) => {
 
 const addCertificate = (form, state) => {
   if (
-    !form.newName.value.trim() ||
-    !form.newProvider.value.trim() ||
-    !form.newCompletedIn.trim()
+    !form.newname.value.trim() ||
+    !form.newprovider.value.trim() ||
+    !form.newcompletedIn.value.trim()
   ) {
     return;
   }
-
   const [data, setData] = state;
   const newData = { ...data };
   newData.certificates.push(
     new Certificate(
-      form.newName.value,
-      form.newProvider.value,
-      form.newCompletedIn
+      form.newname.value,
+      form.newprovider.value,
+      form.newcompletedIn.value
     )
   );
   setData(newData);
 };
 
+const handleChange = (id, element, state) => {
+  const [data, setData] = state;
+  const newData = { ...data };
+  newData.certificates.forEach((item) => {
+    if (item.id === id) {
+      item[element.name] = element.value;
+    }
+  });
+  setData(newData);
+};
+
 const CertificateComp = ({
   id,
-  certificateName,
+  certificateName = "name",
   provider,
   completedIn,
   state,
@@ -47,29 +57,32 @@ const CertificateComp = ({
       <label htmlFor={id + "name"}>Certificate</label>
       <input
         type="text"
-        name={id + "Name"}
-        id={id + "certificateName"}
+        name="name"
+        id={id + "name"}
         defaultValue={certificateName}
         placeholder="Certificate name"
         required
+        onChange={(e) => handleChange(id, e.target, state)}
       />
       <label htmlFor={id + "provider"}>Institute</label>
       <input
         type="text"
-        name={id + "Provider"}
+        name="provider"
         id={id + "provider"}
         defaultValue={provider}
         placeholder="Institute name"
         required
+        onChange={(e) => handleChange(id, e.target, state)}
       />
       <label htmlFor={id + "completedIn"}>Date of completion</label>
       <input
         type="text"
-        name={id + "CompletedIn"}
+        name="completedIn"
         id={id + "completedIn"}
         defaultValue={completedIn}
         placeholder="Year"
         required
+        onChange={(e) => handleChange(id, e.target, state)}
       />
     </div>
   );
@@ -78,7 +91,13 @@ const CertificateComp = ({
 const NewCertificateForm = ({ state }) => {
   return (
     <>
-      <CertificateComp id="new" state={state} />
+      <CertificateComp
+        id="new"
+        certificateName=""
+        provider=""
+        completedIn=""
+        state={state}
+      />
       <button onClick={(e) => addCertificate(e.target.form, state)}>
         Add certificate
       </button>

@@ -28,7 +28,6 @@ const AddSkill = ({ state }) => {
     if (!form.skills.trim() || !form["skill-type"].trim()) {
       return;
     }
-    console.log(form["skill-type"]);
     const [data, setData] = state;
     const newData = { ...data };
     const newSkill = new Skills(
